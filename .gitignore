@@ -2,10 +2,10 @@
 __pycache__/
 *.py[cod]
 *$py.class
-
+.secrets.toml
 # C extensions
 *.so
-
+pypi.sh
 # Distribution / packaging
 .Python
 build/
