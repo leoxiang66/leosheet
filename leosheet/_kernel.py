@@ -1,6 +1,8 @@
 # streamlit_app.py
 from shillelagh.backends.apsw.db import connect
-from ._utils import secrets
+from ._utils import secret_holder
+
+
 
 
 def run_query(query):
@@ -13,7 +15,7 @@ def run_query(query):
 
     '''
     cursor = __login_to_google__()
-    sheet_url = secrets["private_gsheets_url"]
+    sheet_url = secret_holder.secrets["private_gsheets_url"]
     query = query.replace('SHEET',f'''"{sheet_url}"''')
     dataset = cursor.execute(query)
     return dataset
@@ -29,7 +31,7 @@ def __login_to_google__():
         "adapter_kwargs": {
         "gsheetsapi": {
                            "service_account_info": {
-                               **secrets["gcp_service_account"]
+                               **secret_holder.secrets["gcp_service_account"]
                            }
                        }
                    }

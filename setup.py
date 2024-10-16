@@ -7,7 +7,7 @@ requirements = ["shillelagh==1.1.5", "shillelagh[gsheetsapi]", "toml"]
 
 setup(
     name="leosheet",
-    version="0.1.0",
+    version="0.2.0",
     author="Tao Xiang",
     author_email="xiang.tao@outlook.de",
     description="Python SDK for Google Sheet Interaction",
